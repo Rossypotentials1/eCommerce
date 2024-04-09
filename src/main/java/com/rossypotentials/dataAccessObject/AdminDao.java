@@ -38,6 +38,7 @@ public class AdminDao {
 
     public static boolean exists(String email) {
         try {
+            
             PreparedStatement preparedStatement = connection.prepareStatement("SELECT COUNT(*) FROM newAdmin WHERE email = ?");
             preparedStatement.setString(1, email);
             ResultSet resultSet = preparedStatement.executeQuery();
